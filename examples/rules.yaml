@@ -1,0 +1,30 @@
+rules:
+  - id: no-em-dash
+    description: Em dashes are not permitted in source files
+    pattern: "—"
+    file_extensions: [".py", ".md", ".txt", ".yml", ".yaml", ".ini", ".cfg", ".toml"]
+    severity: error
+
+  - id: no-optional-type
+    description: Use X | None instead of Optional[X] in Python 3.10+
+    pattern: "Optional\\["
+    file_extensions: [".py"]
+    severity: warning
+
+  - id: no-python-jose
+    description: python-jose is banned, use PyJWT instead
+    pattern: "python-jose"
+    file_extensions: [".txt", ".toml", ".cfg"]
+    severity: error
+
+  - id: no-typing-imports
+    description: Use built-in generic types instead of typing.Dict, typing.List, or typing.Tuple
+    pattern: "from typing import.*(Dict|List|Tuple)"
+    file_extensions: [".py"]
+    severity: warning
+
+  - id: no-hardcoded-secrets
+    description: Possible hardcoded secret assignment detected
+    pattern: "(api_key|secret_key|password)\\s*=\\s*['\"][^'\"]{8,}"
+    file_extensions: [".py", ".yaml", ".yml"]
+    severity: error
