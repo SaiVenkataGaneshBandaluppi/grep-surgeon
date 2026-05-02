@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="20" fill="#1a1a2e"/>
+  <!-- Magnifying glass handle -->
+  <line x1="120" y1="120" x2="155" y2="155" stroke="#e94560" stroke-width="10" stroke-linecap="round"/>
+  <!-- Magnifying glass circle -->
+  <circle cx="85" cy="85" r="45" fill="none" stroke="#e94560" stroke-width="8"/>
+  <!-- Scalpel blade inside glass -->
+  <line x1="68" y1="78" x2="102" y2="92" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="102,92 108,82 115,95" fill="#ffffff"/>
+  <!-- Code lines -->
+  <rect x="62" y="95" width="24" height="4" rx="2" fill="#0f3460"/>
+  <rect x="62" y="103" width="36" height="4" rx="2" fill="#0f3460"/>
+</svg>
