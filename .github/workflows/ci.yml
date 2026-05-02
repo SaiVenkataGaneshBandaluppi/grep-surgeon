@@ -1,0 +1,35 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Lint
+        run: python -m ruff check grep_surgeon/ tests/
+
+      - name: Run tests with coverage
+        run: |
+          python -m coverage run -m pytest tests/ -v --tb=short
+          python -m coverage report --fail-under=75
+
+      - name: Security scan
+        run: bandit -r grep_surgeon/ -lll
+
+      - name: Audit dependencies
+        run: |
+          pip-audit -r requirements.txt
+          pip-audit -r requirements-dev.txt
