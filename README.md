@@ -10,10 +10,6 @@
 
 ---
 
-[Demo GIF here]
-
----
-
 ## What it does
 
 grep-surgeon reads a YAML rules file and recursively scans a target directory for pattern violations. For each match it reports the file, line number, rule ID, and the offending text. It exits with code 1 when any `error`-severity rules fire, making it a drop-in CI gate.
@@ -54,7 +50,7 @@ grep-surgeon reads a YAML rules file and recursively scans a target directory fo
 ## Setup
 
 ```bash
-git clone https://github.com/youruser/grep-surgeon.git
+git clone https://github.com/SaiVenkataGaneshBandaluppi/grep-surgeon.git
 cd grep-surgeon
 pip install -r requirements.txt
 pip install -e .
